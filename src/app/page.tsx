@@ -9,14 +9,23 @@ export default function Home() {
   const [filteredAdvocates, setFilteredAdvocates] = useState<Advocate[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>("");
 
+  const fetchAdvocates = async () => {
+    try {
+      const response = await fetch("/api/advocates");
+      if (!response.ok) {
+        throw new Error(`Failed to fetch advocates: ${response.statusText}`);
+      }
+      const jsonResponse = await response.json();
+      setAdvocates(jsonResponse.data);
+      setFilteredAdvocates(jsonResponse.data);
+    } catch (error) {
+      console.error("Error fetching advocates:", error);
+    }
+  };
+
   useEffect(() => {
     console.log("fetching advocates...");
-    fetch("/api/advocates").then((response) => {
-      response.json().then((jsonResponse) => {
-        setAdvocates(jsonResponse.data);
-        setFilteredAdvocates(jsonResponse.data);
-      });
-    });
+    fetchAdvocates();
   }, []);
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {

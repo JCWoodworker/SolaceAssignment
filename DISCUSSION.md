@@ -42,5 +42,4 @@
 - This is admittedly a small weakness when working with a very short timeframe
   - I like to constantly change my mind while deciding how I want things to look until I feel it's right
 - I did not spend nearly enough time working on making this a more aesthetically pleasing site, although there is some responsiveness with the search component, and some built-in responsiveness thanks to ShadCN components
-- I HAVE in fact put together a well-designed, asthetically pleasing, user friendly UI for a company I am currently contracted with, and would love the opportunity to showcase what I can really do given more time to accomplish.  It is behind an admin login so I would have to share a screen, but it is not a secret software project, and there is ZERO conflict of interest here, so showing it off will not be an issue.
-  - It utilized ShadCN, Radix UI, and Tailwind so it's right on par with your stack
+- I do have experience putting together filterable and sortable tables with tailwind and shadcn, and would be happy to share with you.

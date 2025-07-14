@@ -46,9 +46,9 @@ export default function Home() {
   };
 
   return (
-    <main style={{ margin: "24px" }}>
+    <main className="p-4 bg-gray-200">
       <h1 className="mb-4 text-2xl font-bold">Solace Advocates</h1>
-      <div className="mb-4 border-2 border-gray-300 rounded-md p-4">
+      <div className="mb-4 text-white border-2 border-gray-300 rounded-md p-4 bg-gradient-to-b from-emerald-500 to-black">
         <p>Search</p>
         <p>Searching for: {searchTerm}</p>
         <input style={{ border: "1px solid black" }} onChange={onChange} />

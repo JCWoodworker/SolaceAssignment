@@ -1,4 +1,13 @@
 import { Advocate } from "../../types/types";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import tableStyles from "./styles";
 
 interface AdvocatesTableProps {
   filteredAdvocates: Advocate[];
@@ -6,38 +15,38 @@ interface AdvocatesTableProps {
 
 const AdvocatesTable = ({ filteredAdvocates }: AdvocatesTableProps) => {
   return (
-    <table>
-      <thead>
-        <tr>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>City</th>
-          <th>Degree</th>
-          <th>Specialties</th>
-          <th>Years of Experience</th>
-          <th>Phone Number</th>
-        </tr>
-      </thead>
-      <tbody>
+    <Table className={tableStyles.table}>
+      <TableHeader className={tableStyles.tableHeader}>
+        <TableRow>
+          <TableHead className={tableStyles.tableHead}>First Name</TableHead>
+          <TableHead className={tableStyles.tableHead}>Last Name</TableHead>
+          <TableHead className={tableStyles.tableHead}>City</TableHead>
+          <TableHead className={tableStyles.tableHead}>Degree</TableHead>
+          <TableHead className={tableStyles.tableHead}>Specialties</TableHead>
+          <TableHead className={tableStyles.tableHead}>Years of Experience</TableHead>
+          <TableHead className={tableStyles.tableHead}>Phone Number</TableHead>
+        </TableRow>
+      </TableHeader>
+      <TableBody>
         {filteredAdvocates.map((advocate: Advocate) => {
           return (
-            <tr key={advocate.id}>
-              <td>{advocate.firstName}</td>
-              <td>{advocate.lastName}</td>
-              <td>{advocate.city}</td>
-              <td>{advocate.degree}</td>
-              <td>
+            <TableRow key={advocate.id}>
+              <TableCell className={tableStyles.tableCell}>{advocate.firstName}</TableCell>
+              <TableCell className={tableStyles.tableCell}>{advocate.lastName}</TableCell>
+              <TableCell className={tableStyles.tableCell}>{advocate.city}</TableCell>
+              <TableCell className={tableStyles.tableCell}>{advocate.degree}</TableCell>
+              <TableCell className={tableStyles.tableCell}>
                 {advocate.specialties.map((specialty: string) => (
                   <div key={specialty}>{specialty}</div>
                 ))}
-              </td>
-              <td>{advocate.yearsOfExperience}</td>
-              <td>{advocate.phoneNumber}</td>
-            </tr>
+              </TableCell>
+              <TableCell className={tableStyles.tableCell}>{advocate.yearsOfExperience}</TableCell>
+              <TableCell className={tableStyles.tableCell}>{advocate.phoneNumber}</TableCell>
+            </TableRow>
           );
         })}
-      </tbody>
-    </table>
+      </TableBody>
+    </Table>
   );
 };
 

@@ -1,4 +1,6 @@
+import { Button } from "@/components/ui/button";
 import { Advocate } from "../../types/types";
+import { Input } from "@/components/ui/input";
 
 interface SearchBarProps {
   advocates: Advocate[];
@@ -42,8 +44,8 @@ const SearchBar = ({
   return (
     <div className="m-auto mt-8 mb-4 flex flex-col gap-4 w-full text-white border-2 border-gray-300 rounded-md p-4 bg-gradient-to-b from-emerald-500 to-black">
       <div className="flex flex-col sm:flex-row sm:flex-wrap gap-2 sm:gap-4">
-        <input
-          className="w-full sm:w-2/3 md:w-1/2 lg:w-2/3 text-black border-2 border-gray-300 rounded-md p-2 text-sm sm:text-base"
+        <Input
+          className="w-full sm:w-2/3 md:w-1/2 lg:w-2/3 bg-white text-black border-2 border-gray-300 rounded-md p-2 text-sm sm:text-base"
           value={searchTerm}
           onChange={onChange}
           placeholder="Search by name, city, degree, specialty, or years of experience"
@@ -56,12 +58,12 @@ const SearchBar = ({
           )}
         </p>
       </div>
-      <button
-        className="text-black w-full sm:w-auto sm:max-w-xs rounded-md bg-[rgb(215,161,59)] p-2 hover:text-white transition-colors duration-200 font-medium"
+      <Button
+        className="text-black w-full sm:w-auto sm:max-w-xs rounded-md bg-[rgb(215,161,59)] p-2 hover:text-white transition-colors duration-200 font-medium hover:bg-[rgb(143,121,80)]"
         onClick={onClick}
       >
         Reset Search
-      </button>
+      </Button>
     </div>
   );
 };
